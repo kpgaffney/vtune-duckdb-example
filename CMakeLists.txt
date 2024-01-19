@@ -34,7 +34,7 @@ endif ()
 
 FetchContent_Declare(
         duckdb
-        URL https://github.com/duckdb/duckdb/releases/download/v0.9.2/libduckdb-${DUCKDB_URL_PLATFORM}.zip
+        URL https://github.com/duckdb/duckdb/releases/download/v0.8.1/libduckdb-${DUCKDB_URL_PLATFORM}.zip
 )
 
 FetchContent_GetProperties(duckdb)
