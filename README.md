@@ -31,8 +31,7 @@ This example demonstrates how to profile DuckDB with Intel® VTune.
 	```
 3. Run a custom analysis, if desired. For example, count instructions retired and execution stalls. You may need to search for the [performance counter events](https://perfmon-events.intel.com) specific to your system.
 	```
-	vtune \
-		-collect-with runsa \
+	vtune -collect-with runsa \
 		-knob event-config=INST_RETIRED.ANY,CYCLE_ACTIVITY.STALLS_TOTAL \
 		./vtune_duckdb_example
 	```
