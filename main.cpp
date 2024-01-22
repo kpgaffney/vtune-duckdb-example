@@ -16,6 +16,8 @@ int main() {
   std::cout << "Generating TPC-H data..." << std::endl;
   con.Query("CALL dbgen(sf=1)")->Print();
 
+  __itt_resume();
+
   for (int query_number = 1; query_number <= 22; ++query_number) {
     std::string query_name = "Q" + std::to_string(query_number);
     std::cout << "Running TPC-H " << query_name << "..." << std::endl;
@@ -28,6 +30,8 @@ int main() {
     con.Query("PRAGMA tpch(" + std::to_string(query_number) + ")");
     __itt_frame_end_v3(domain, nullptr);
   }
+
+  __itt_pause();
 
   return 0;
 }
